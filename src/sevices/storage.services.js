@@ -1,7 +1,7 @@
 const ImageKit= require('@imagekit/nodejs')
 
 const imagekit = new ImageKit({
-    privateKey: "private_S2jBnIl43Go2DeYAhNbiJZdZams="
+    privateKey: process.env.IMAGEKIT_PRIVATE_KEY   // WE are keeping that private key in env file like production level does
 })
 
 async function uploadFile(buffer){

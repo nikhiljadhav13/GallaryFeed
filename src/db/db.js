@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 async function connectDB(){
 
-    await mongoose.connect("mongodb+srv://user1:VncisR7BIs1J2Jsn@galleryfeed.qsjaf1s.mongodb.net/gallaryfeed")
+    await mongoose.connect(process.env.MONGO_URI)  // WE are keeping that url in env file like production level does
 
     console.log("server is connected to DB")
 }
