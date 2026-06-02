@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Createpost from "./pages/Createpost";
+import Feed from "./pages/Feed";
 
 const App = () => {
   return (
@@ -8,7 +9,7 @@ const App = () => {
       <Routes>
         
         <Route path="/create-post" element={<Createpost/>} />
-        <Route path="/about" element={<h1>about</h1>} />
+        <Route path="/feed" element={<Feed/>} />
 
       </Routes>
     </BrowserRouter>

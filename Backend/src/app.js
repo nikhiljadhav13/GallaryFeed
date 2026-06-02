@@ -3,21 +3,27 @@ const express = require('express')
 const multer = require('multer')
 const uploadFile = require('./sevices/storage.services')
 const postModel = require('./models/post.model')
+const cors = require('cors')
 
 
 
 const app = express()
+app.use(cors())  // this is for cross origin resource sharing ( this is for frontend and backend connection)
 app.use(express.json())   // middle ware( this ware for text)
 
 const upload = multer({storage: multer.memoryStorage()}) // this multer middle ware is for reading files
 
 
 
-app.post('/create-post', upload.single("image-1"), async (req,res)=>{
+app.post('/create-post', upload.single("image"), async (req,res)=>{
 
-    
+    if (!req.file) {
+        return res.status(400).json({
+            message: "Image file is required"
+        })
+    }
+
     const result = await uploadFile(req.file.buffer)  // from service provider to access the here
-    console.log(result)
 
     const post = await postModel.create({
         image: result.url,
