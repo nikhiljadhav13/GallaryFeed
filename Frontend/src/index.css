@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202124;
+}
+
+.create-post-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+    url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=80")
+      center / cover;
+}
+
+.create-post-section h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  color: #161616;
+}
+
+.create-post-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(100%, 420px);
+  padding: 28px;
+  border: 1px solid rgba(32, 33, 36, 0.12);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+.create-post-section input {
+  width: 100%;
+  border: 1px solid #d5d8df;
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+}
+
+.create-post-section input[type="text"] {
+  min-height: 48px;
+  padding: 0 14px;
+  background-color: #f8f9fb;
+}
+
+.create-post-section input[type="text"]:focus {
+  border-color: #5b7cfa;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(91, 124, 250, 0.18);
+}
+
+.create-post-section input[type="file"] {
+  padding: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.create-post-section input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #202124;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.create-post-section button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  background-color: #5b7cfa;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.create-post-section button:hover {
+  background-color: #4567e8;
+  box-shadow: 0 10px 22px rgba(69, 103, 232, 0.28);
+  transform: translateY(-1px);
+}
+
+.create-post-section button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .create-post-section form {
+    padding: 22px;
+  }
+}
