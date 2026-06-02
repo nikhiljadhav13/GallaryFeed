@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 
-
 const Createpost = () => {
 
   const navigate = useNavigate()  // this is for navigation ( this is for navigating to feed page after creating post)
